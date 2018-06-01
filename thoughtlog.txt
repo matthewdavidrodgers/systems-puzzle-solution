@@ -1,0 +1,19 @@
+06/01
+    First thought: readme specifies starting the db with a second command. Isn't the point of compose to abstract and automate it all to one command? (up) Just use depends-on: db
+    Start with high level: examine the docker-compose.yml
+        Looks like the dbdata volume isn't mounted? Need to look into syntax
+        Both the db and the flask app have the same env_file?
+        * Syntax not uniform. Volume not quoted for flaskapp. Probably correct, db wrong
+        Don't think ports are supposed to be quoted either
+        Don't know anything about nginx conf files. Need to research
+    Before doing anything, run system. Record errors.
+        run --rm removes the container when finished, even though it was used to connect to the db. Maybe not rm, just detach? Or maybe make the file system persistent? Couldn't I just move the db connect to the app?
+        Warning: the flaskapp command notes that it was built. To rebuild: docker-compose build or docker-compose up --build
+        No other errors or warnings
+        Didn't need to create db, saw it was already running
+        Nothing from localhost
+        Shuts down gracefully
+    Looking up example docker-compose.yml file for basic errors
+        Version number is double quoted
+        Ports are supposed to be quoted (first number is actual machine, second is container)
+        Looks like volumes can be quoted or not
