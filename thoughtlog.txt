@@ -16,4 +16,18 @@
     Looking up example docker-compose.yml file for basic errors
         Version number is double quoted
         Ports are supposed to be quoted (first number is actual machine, second is container)
+        * nginx ports are backwards
         Looks like volumes can be quoted or not
+    Need to go piece-wise. Get db running, get flaskapp running, then nginx.
+        db:
+            start the db service, exec /bin/bash into the container, hit the db
+            seems to be fine
+        flaskapp:
+            start db, expose a port for the flaskapp, start it (not detached)
+            * system dialog tells me it's exposed on 5000 (flask default?) while nginx routes to 5001. Need to change
+            can route correctly, but /success displays garbage. Rendering or db?
+        nginx:
+            seems to be working fine now. Data persisting on /success
+            Inspecting the source shows objects (object ids?) returned for /success, not data. Hopefully a routing thing, not a sql thing
+    garbage comes from a db_session.query(Items).all() must research this database package to see what a query returns
+    
