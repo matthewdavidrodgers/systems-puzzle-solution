@@ -30,4 +30,6 @@
             seems to be working fine now. Data persisting on /success
             Inspecting the source shows objects (object ids?) returned for /success, not data. Hopefully a routing thing, not a sql thing
     garbage comes from a db_session.query(Items).all() must research this database package to see what a query returns
-    
+    not a module: database.py actually. Hits sqlalchemy. Run through documentation there.
+    Returning a models.Items object. str()'ing this just gives an object id. Need to get all fields
+    IDs from db seem inconsistent

@@ -20,14 +20,10 @@ def add_item():
     return render_template('index.html', form=form)
 
 @app.route("/success")
-def success():
-    results = []
- 
+def success(): 
     qry = db_session.query(Items)
-    results = qry.all()
-
+    results = [(item.id, item.name, item.description, str(item.date_added)) for item in qry.all()]
     return str(results)
-  
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=int("5001"))
