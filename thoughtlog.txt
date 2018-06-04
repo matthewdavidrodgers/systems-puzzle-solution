@@ -37,3 +37,8 @@
 06/02
     Removed dbdata volume, started over with fixes.
     db spits out a lot of logs. Lot of servers stopping? Seems to init correctly
+06/04
+    Trying on an ubuntu vm. Docker had initial issues
+    docker-compose asked to change version 3 to 2. Hm. Didn't on mac.
+    So I can push the init_db into app.py if I start db first manually. Need to try this later.
+    Found a bug. On name: "da first", quantity: "1", description: "uhone" there was a sql error. I assume it has to do with the space in name.
