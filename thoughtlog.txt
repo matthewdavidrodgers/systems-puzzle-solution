@@ -33,3 +33,7 @@
     not a module: database.py actually. Hits sqlalchemy. Run through documentation there.
     Returning a models.Items object. str()'ing this just gives an object id. Need to get all fields
     IDs from db seem inconsistent
+
+06/02
+    Removed dbdata volume, started over with fixes.
+    db spits out a lot of logs. Lot of servers stopping? Seems to init correctly
