@@ -50,3 +50,4 @@
     Version issue is because apt stores docker-compose 1.8.0, v3 doesn't work until 1.10.0. No real need to upgrade though.
     Couldn't up the system all at once... connection refused and the flaskapp shutdown.
     Found the issue. Docker-compose waits for db to START before starting flaskapp, but doesn't wait for ready. Fixed by polling it until it's ready
+    Restarting the flaskapp service while running still works. It connects to the db correctly
