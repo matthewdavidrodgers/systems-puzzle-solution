@@ -42,3 +42,8 @@
     docker-compose asked to change version 3 to 2. Hm. Didn't on mac.
     So I can push the init_db into app.py if I start db first manually. Need to try this later.
     Found a bug. On name: "da first", quantity: "1", description: "uhone" there was a sql error. I assume it has to do with the space in name.
+    It's not the space in name. "items" doesn't exist. Something sql-y
+06/05
+    Shouldn't be an issue with compose version 2 or 3. All pretty boilerplate. Will have to see what that was.
+    On the 500 error on a POST: I was starting the container incorrectly. Funny how there was no useful error message
+    Trying again on the ubuntu server
